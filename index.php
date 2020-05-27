@@ -1,7 +1,20 @@
 <!DOCTYPE HTML>
 
-<HTML lang="eng">
+<HTML lang="en">
 
+<?php 
+
+    session_start(); // to allow variable transfer between pages..
+    include("config.php");
+
+    //connect to database..
+    $dbconnect= mysqli_connect (DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+    if(mysqli_conenct_errno()){
+        echo "Connection failed:".mysqli_connect_error();
+        exit;
+        }
+    ?>
 
 <head>
     <meta charset="utf-8">
@@ -28,7 +41,7 @@
 
             <!-- Logo/sma;; image goeshere-->
             <div class="box logo">
-                <a href="index.php"><img src="images/logo.png" width="261" height ="150" alt="dice"/> ,/a>
+                <a href="index.php"><img src="images/logo.png" width="261" height ="150" alt="dice"/> </a>
             </div>
 
             <div class="box banner">
@@ -56,5 +69,5 @@
                 </div> <!--/boxfooter-->
         </div> <!--wrapper-->
 </body>
-</HTML>
+</html>
 
