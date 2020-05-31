@@ -79,12 +79,12 @@
 
                 <!--Partial Stars original source: https://codepen.io/Bluetidepro/pen/GkpEa-->
                 <div class="star-ratings-sprite">
-                    <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                    <span style="width: <?php echo $find_rs['Rating'] /5 * 100 ?>%" class="star-ratings-sprite-rating"></span>
                 </div> <!--/star ratings div-->
 
                 <div class="actual-rating">
                     <?php echo $find_rs['Rating'] ?>
-                    (based on <?php echo $find_rs['RatingCount'] ?> votes )
+                    (based on <?php echo number_format($find_rs['RatingCount']) ?> ratings )
                 </div> <!--/ text ratings div-->
 
             </div>  <!--/text ratings div-->
