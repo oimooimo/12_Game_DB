@@ -64,6 +64,7 @@
                     <?php echo $find_rs['Subtitle'] ?>
 
                 </div> <!--/subtitle-->
+                
                 <?php
                     } 
                 ?>   
@@ -71,20 +72,25 @@
             </div> <!-- flex container-->
             <!--/heading and subtile-->
                 <p>
-                    <b> Genre</b>;
-                    <?php echo $find_rs['Genre'] ?>
+                
+            <!--price-->
+                 <?php
+                    if($find_rs['Price'] == 0)
+                    
+                    {
+                ?>
+                    <p> Free!</p>
+                 <?php
+                }// end price if
 
-                    <br />
-                    <b> Developer</b>;
-                    <?php echo $find_rs['DevName'] ?>
+                    else{
+                    ?>   
+                    <b>Price</b>:$<?php echo $find_rs['Price'] ?>
+    
+                 <?php
+                    } 
+                ?>
 
-                    <br />
-                    <b> Rating</b>;
-                    <?php echo $find_rs['Rating'] ?>
-                    (based on <?php echo $find_rs['RatingCount'] ?> votes )
-                </p>
-                <hr />
-                <?php echo $find_rs['Description'] ?>
             </div><!--/results-->
 
             <br />
