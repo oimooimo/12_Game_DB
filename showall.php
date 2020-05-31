@@ -37,15 +37,39 @@
 
                         ?>
 
+
             <!-- results go here-->
             <div class="results">
-                <span class="sub_heading">
-                    <a href="<?php echo $find_rs['URL']; ?>">
-                        <?php echo $find_rs ['Name']; ?>
-                    </a>
-                </span> - <?php echo $find_rs['Subtitle'] ?>
 
+            <!--heading and subtitle-->
 
+            <div class="flex-container">
+                <div>
+                    <span class="sub_heading">
+                        <a href="<?php echo $find_rs['URL']; ?>">
+                            <?php echo $find_rs ['Name']; ?>
+                        </a>
+                    </span> 
+                </div> <!-- /title-->
+
+                <?php
+                    if($find_rs['Subtitle'] !="")
+
+                    {
+                    ?>
+                <div>
+
+                    &nbsp; &nbsp; | &nbsp; &nbsp;
+
+                    <?php echo $find_rs['Subtitle'] ?>
+
+                </div> <!--/subtitle-->
+                <?php
+                    } 
+                ?>   
+    
+            </div> <!-- flex container-->
+            <!--/heading and subtile-->
                 <p>
                     <b> Genre</b>;
                     <?php echo $find_rs['Genre'] ?>
