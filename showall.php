@@ -115,6 +115,20 @@
                  <?php
                     } 
                 ?>
+            <!-- price -->
+
+            <p>
+                <!--Developer, Genre and Age -->
+                <b> Developer</b>;<?php echo $find_rs['DevName'] ?><br />
+                <b> Genre</b>;<?php echo $find_rs['Genre'] ?><br />
+                Suitbale for ages <b><?php echo $find_rs['Age'] ?></b> and up <br />
+            </p>
+
+            <p>
+                <hr />
+                 <?php echo $find_rs['Description'] ?>
+
+            </p>
 
                 
             </div><!--/results-->
