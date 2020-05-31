@@ -37,7 +37,6 @@
 
                         ?>
 
-
             <!-- results go here-->
             <div class="results">
 
@@ -57,6 +56,7 @@
 
                     {
                     ?>
+
                 <div>
 
                     &nbsp; &nbsp; | &nbsp; &nbsp;
@@ -64,14 +64,31 @@
                     <?php echo $find_rs['Subtitle'] ?>
 
                 </div> <!--/subtitle-->
-                
+
                 <?php
                     } 
                 ?>   
     
+
             </div> <!-- flex container-->
             <!--/heading and subtile-->
-                
+
+            <!--ratings area-->
+
+            <div class="flex-container">
+
+                <!--Partial Stars original source: https://codepen.io/Bluetidepro/pen/GkpEa-->
+                <div class="star-ratings-sprite">
+                    <span style="width:52%" class="star-ratings-sprite-rating"></span>
+                </div> <!--/star ratings div-->
+
+                <div class="actual-rating">
+                    <?php echo $find_rs['Rating'] ?>
+                    (based on <?php echo $find_rs['RatingCount'] ?> votes )
+                </div> <!--/ text ratings div-->
+
+            </div>  <!--/text ratings div-->
+
             <!--price-->
                  <?php
                     if($find_rs['Price'] == 0)
@@ -99,7 +116,7 @@
                     } 
                 ?>
 
-     
+                
             </div><!--/results-->
 
             <br />
