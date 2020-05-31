@@ -71,7 +71,6 @@
     
             </div> <!-- flex container-->
             <!--/heading and subtile-->
-                <p>
                 
             <!--price-->
                  <?php
@@ -79,7 +78,16 @@
                     
                     {
                 ?>
-                    <p> Free!</p>
+                    <p> Free!
+                    <?php   if($find_rs['InApp'] == 1)
+                    {
+                            ?>
+                                (In App Purchase)
+                    </p>
+                            <?php
+                    }  // end In app if
+                 ?>
+
                  <?php
                 }// end price if
 
@@ -91,6 +99,7 @@
                     } 
                 ?>
 
+     
             </div><!--/results-->
 
             <br />
