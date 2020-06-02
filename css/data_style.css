@@ -235,5 +235,9 @@ input {
     margin-bottom: 5px;
 }
 
-
-
+.adv-txt {
+    vertical-align:middle;
+    margin:auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}
