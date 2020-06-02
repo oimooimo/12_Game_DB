@@ -31,11 +31,13 @@
 
                 <input class="adv" type="text" name="app_name" value="" placeholder="app Nam/Title..."/> 
 
-                <input class="submit advanced-button" type="submit" name="advanced" value="search &nbsp; &#xf002;" />
 
                 <!--Genre Dropdown -->
+                <select class="search_adv" name="genre">
+                
+                <option value="" disabled selected> Genre..</option>
 
-                <select name="genre">
+                
                 <!-- get options from Database-->
                     <?php
                     $genre_sql="SELECT * FROM `genre` ORDER BY `genre`.`Genre` ASC";
@@ -44,7 +46,7 @@
 
                     do {
                         ?>
-                        <option value="name"> Genre Name</option>
+                        <option value="<?php echo $genre_rs['Genre']; ?>"> <?php echo $genre_rs['Genre']; ?></option>
 
                     <?php
                     } // end genre do loop
@@ -55,6 +57,7 @@
                      ?>
 
                 </select>
+                <input class="submit advanced-button" type="submit" name="advanced" value="search &nbsp; &#xf002;" />
 
                 </form>
 
