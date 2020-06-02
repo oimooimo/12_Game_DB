@@ -34,7 +34,7 @@
 
                 <!--Genre Dropdown -->
                 <select class="search_adv" name="genre">
-                
+
                 <option value="" disabled selected> Genre..</option>
 
                 
@@ -57,6 +57,61 @@
                      ?>
 
                 </select>
+
+                <!--Cost-->
+                <div class="flex-container">
+                    <div class="adv-txt">
+                        Cost&nbsp;(less&nbsp;than):
+                    </div> <!-- /cost lable-->
+
+                    <div>
+                        <input class="adv" type="text" name="cost" size="40" value="" placeholder="$..."/>
+                    </div> <!--/cost input box-->
+                </div> <!--/costflexbox-->
+
+                <!-- No in app checkbox--->
+                <input class="adv-txt" type="checkbox" name="in_app" value="0"> No In App Purchase
+
+                <!--rating-->
+                <div class="flex-container">
+                    <div class="adv-txt">
+                        Rating:
+                    </div><!--/rating lavel-->
+
+                    <div>
+                        <select class="search adv" name="rate_more_less">
+                            <option value="" disabled > choose..</option>    
+                            <option value="at least"> At Least</option>   
+                            <option value="at most"> At Most</option>   
+                        </select>
+
+                    </div><!-- /Rating Dropdown-->
+
+                    <div>
+                        <input class="adv" type="text" name="rating" size="3" value="" placeolder=""/>
+                    </div><!--/rating amount-->
+                </div> <!--rating flexbox-->
+                <!-- Age-->
+                <div class="flex-container">
+                    <div class="adv-txt">
+                        Age:
+                    </div><!--/age lavel-->
+
+                    <div>
+                        <select class="search adv" name="age_more_less">
+                            <option value="" disabled > choose..</option>    
+                            <option value="at least"> Minimum Age</option>   
+                            <option value="at most"> Maximum Age </option>   
+                        </select>
+
+                    </div><!-- /Age Dropdown-->
+
+                    <div>
+                        <input class="adv" type="text" name="Age" size="3" value="" placeolder=""/>
+                    </div><!--/Age amount-->
+                </div> <!--Age flexbox-->
+
+                <!--search button is below-->
                 <input class="submit advanced-button" type="submit" name="advanced" value="search &nbsp; &#xf002;" />
 
                 </form>
@@ -73,3 +128,4 @@
 </body>
 
 </html>
+
