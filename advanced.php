@@ -4,6 +4,15 @@
     $developer = mysqli_real_escape_string($dbconnect, $_POST['dev_name']);
     $genre = mysqli_real_escape_string($dbconnect, $_POST['genre']);
     $cost = mysqli_real_escape_string($dbconnect, $_POST['cost']);
+
+    if (isset($_POST['in_app'])) {
+            $in_app = 0;
+    }
+
+    else {
+            $in_app = 1;
+    }
+    
   
     $find_sql="SELECT * FROM `game_details`
     JOIN genre ON (game_details.GenreID = genre.GenreID)
@@ -12,6 +21,8 @@
     AND `DevName` LIKE '%$developer%'
     AND `Genre`LIKE '%$genre%'
     AND `Price` <='$cost'
+    AND (`InApp` = '$in_app' OR `InApp` = 0)
+
 
     ";
     $find_query = mysqli_query($dbconnect, $find_sql);
@@ -30,3 +41,4 @@
             </div><!--/main-->
 
 <?php include 'bottombit.php' ?>        
+        
