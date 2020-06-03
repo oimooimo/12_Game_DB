@@ -5,6 +5,17 @@
     $genre = mysqli_real_escape_string($dbconnect, $_POST['genre']);
     $cost = mysqli_real_escape_string($dbconnect, $_POST['cost']);
 
+     // Ratings....
+    if ($cost == "") {
+        $cost_op = ">=";
+        $cost = 0;
+    }
+
+    else {
+        $cost_op="<=";
+    }
+
+    // In App Purchases.....
     if (isset($_POST['in_app'])) {
             $in_app = 0;
     }
@@ -13,6 +24,40 @@
             $in_app = 1;
     }
     
+    // Ratings.....
+    $rating_more_less = mysqli_real_escape_string($dbconnect, $_POST['rate_more_less']);
+    $rating = mysqli_real_escape_string($dbconnect, $_POST['rating']);
+
+    if ( $rating_more_less == "at least") {
+        $rate_op =">=";
+    }
+
+    elseif ( $rating_more_less == "at most") {
+        $rate_op ="<=";
+    }
+
+    else {
+        $rate_op = ">=";
+        $rating = 0;
+    } // end rating if/ else if / else
+
+       // age.....
+    $age_more_less = mysqli_real_escape_string($dbconnect, $_POST['age_more_less']);
+    $age = mysqli_real_escape_string($dbconnect, $_POST['age']);
+
+    if ( $age_more_less == "at least") {
+        $age_op =">=";
+    }
+
+    elseif ( $age_more_less == "at most") {
+        $age_op ="<=";
+    }
+
+    else {
+        $age_op =">=";
+        $age = 0;
+    } // end age if/ else if / else
+
   
     $find_sql="SELECT * FROM `game_details`
     JOIN genre ON (game_details.GenreID = genre.GenreID)
@@ -20,11 +65,13 @@
     WHERE `Name` LIKE '%$app_name%'
     AND `DevName` LIKE '%$developer%'
     AND `Genre`LIKE '%$genre%'
-    AND `Price` <='$cost'
+    AND `Price` $cost_op '$cost'
     AND (`InApp` = '$in_app' OR `InApp` = 0)
-
+    AND `Rating` $rate_op '$rating'
+    AND `Age` $age_op '$age'
 
     ";
+
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -41,4 +88,3 @@
             </div><!--/main-->
 
 <?php include 'bottombit.php' ?>        
-        
