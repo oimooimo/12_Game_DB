@@ -80,7 +80,7 @@
 
                     <div>
                         <select class="search adv" name="rate_more_less">
-                            <option value="" disabled > choose..</option>    
+                            <option value="" disabled selected> choose..</option>    
                             <option value="at least"> At Least</option>   
                             <option value="at most"> At Most</option>   
                         </select>
@@ -88,7 +88,7 @@
                     </div><!-- /Rating Dropdown-->
 
                     <div>
-                        <input class="adv" type="text" name="rating" size="3" value="" placeolder=""/>
+                        <input class="adv" type="text" name="rating" size="3" value="" placeholder=""/>
                     </div><!--/rating amount-->
                 </div> <!--rating flexbox-->
                 <!-- Age-->
@@ -99,7 +99,7 @@
 
                     <div>
                         <select class="search adv" name="age_more_less">
-                            <option value="" disabled > choose..</option>    
+                            <option value="" disabled selected> choose..</option>    
                             <option value="at least"> Minimum Age</option>   
                             <option value="at most"> Maximum Age </option>   
                         </select>
@@ -107,7 +107,7 @@
                     </div><!-- /Age Dropdown-->
 
                     <div>
-                        <input class="adv" type="text" name="Age" size="3" value="" placeolder=""/>
+                        <input class="adv" type="text" name="Age" size="3" value="" placeholder=""/>
                     </div><!--/Age amount-->
                 </div> <!--Age flexbox-->
 
@@ -128,4 +128,3 @@
 </body>
 
 </html>
-
