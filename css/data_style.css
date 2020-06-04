@@ -1,4 +1,5 @@
 body {
+body {
     margin: auto;
     padding: 50px;
     color: #000;
@@ -194,6 +195,11 @@ a.side:hover {color:#8a1737; }
     border-radius: 0 5px 5px 0;
 }
 
+.adv-cost{
+    width:90%;
+    margin-bottom:5px;
+}
+
 input[type="submit"]:hover{
     background-color:#636263;
 }
@@ -201,6 +207,12 @@ input[type="submit"]:hover{
 input.search[type=text], select{
     width:200px;
 }
+
+/*--- ensures that the text next to checkbox in advanced search form */
+.input[type="checkbox"] {
+    display:inline;
+    width: auto;
+    }
 
 input {
     height:40px;
@@ -210,6 +222,9 @@ input {
     box-sizing:border-box;
 }
 
+select{
+    height:40px;
+}
 .free {
     width:245px;
     border-radius:5px;
