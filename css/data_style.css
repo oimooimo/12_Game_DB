@@ -272,3 +272,7 @@ select{
     max-width:550px;
     margin: auto;
 }
+
+.add-field{
+    width:95%;
+}
