@@ -28,37 +28,32 @@
     $rating_more_less = mysqli_real_escape_string($dbconnect, $_POST['rate_more_less']);
     $rating = mysqli_real_escape_string($dbconnect, $_POST['rating']);
 
-    if ( $rating_more_less == "at least") {
-        $rate_op =">=";
-    }
+    if($rating == "" ) {$rating = 0; 
+                        $rating_more_less = "at least";}// set rating to a 0 if it is blank
 
-    elseif ( $rating_more_less == "at most") {
-        $rate_op ="<=";
+    if ( $rating_more_less == "at most") {
+        $rate_op = "<=";
     }
 
     else {
         $rate_op = ">=";
-        $rating = 0;
     } // end rating if/ else if / else
 
        // age.....
     $age_more_less = mysqli_real_escape_string($dbconnect, $_POST['age_more_less']);
     $age = mysqli_real_escape_string($dbconnect, $_POST['age']);
 
-    if ( $age_more_less == "at least") {
-        $age_op =">=";
-    }
+    if ($age == "" ) {$age = 0;
+                     $age_more_less = "at least"; } // set age to a 0 if it is blank
 
-    elseif ( $age_more_less == "at most") {
-        $age_op ="<=";
+    if ( $age_more_less == "at most") {
+        $age_op = "<=";
     }
 
     else {
-        $age_op =">=";
-        $age = 0;
-    } // end age if/ else if / else
+        $age_op = ">=";
+    }
 
-  
     $find_sql="SELECT * FROM `game_details`
     JOIN genre ON (game_details.GenreID = genre.GenreID)
     JOIN developer ON (game_details.DeveloperID = developer.DeveloperID)
