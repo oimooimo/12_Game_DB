@@ -215,7 +215,7 @@ input.search[type=text], select{
 
 /*-- puts radio buttons next to eachother in add entry form */
 input[type="radio"]{
-    height: 0;
+    height: 10;
     width: auto;
     display:inline;
 }
